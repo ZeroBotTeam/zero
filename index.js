@@ -11,15 +11,8 @@ prefix: ['$getServerVar[prefix]', '<@$clientID>', '<@!$clientID>'],
 // VARIABLES, DO NOT DELETE
 
 bot.variables({
-prefix: ".",
-warn: "0",
-reason: "0",
-endstamp:"0",
-hoster:"",
-prize:"",
-joined:"0",
-joinedusers:"",
-ended:"false"
+
+
 
 })
 
@@ -41,23 +34,7 @@ bot.status({
 
 bot.joinCommand({
 channel: "799525792895860739",
-code: 
-`
-<@$authorID> <a:aAnnouncement:802890901558525962> Welcome to **$servername** 
-$title[Welcome $username!] 
-$description[ 
-  **What is FX Helpers**
-FX Helpers is a designing discord server for everyone,here you can get opinions by more experienced designers so your skill level can improve. You can also get tips and tricks to start out your designing career.
-
-**Commonly Asked Questions:** 
-Are you looking for staff members: We are always looking for an active staff/management team to represent us. Currently we have a full moderator/admin team but we are looking for promotion managers and general managers.
-
-More informations and guildlines can be [found here](https://discord.com/channels/724631975507394621/724634402704982047/831504781901430815)
- 
-  ] 
-  $color[BLUE]
-  $addTimestamp
-  $image[https://media.discordapp.net/attachments/824562643964002324/826104372512817152/fxhelpers.gif] `
+ `
   });
   bot.onJoined()
 
@@ -97,29 +74,7 @@ bot.command({
  });
 
  // ban 
-
-bot.command({
-  name: "ban",
-  code: `$argsCheck[1;Invalid command usage, try using it like:
-$getServerVar[prefix]ban [member] (optional reason)
-
-Example:
-$getServerVar[prefix]ban @user/ID optional reason]
-  $author[$userTag[$findUser[$message[1];no]] has been banned;$userAvatar[$findUser[$message[1];no]]
-  $description[**Moderator:** $userTag[$authorID]
-  **Reason:** $replaceText[$replaceText[$checkCondition[$messageSlice[1]==];true;A reason wasn't provided.];false;$messageSlice[1]]]
-  $color[BLUE]
-  $addTimestamp
-  $ban[$findUser[$message[1];no];$replaceText[$replaceText[$checkCondition[$messageSlice[1]==];true;A reason wasn't provided.];false;$messageSlice[1]]]
-  $onlyBotPerms[ban;{title:Error!}{description:I need \`Ban\` permission to do this}{thumbnail:https://cdn.discordapp.com/emojis/867140143676915726.png?v=1}{color:RED}]
-  $onlyPerms[ban;{title:Error!}{description:You need \`Ban\` permission to do this}{thumbnail:https://cdn.discordapp.com/emojis/867140143676915726.png?v=1}{color:RED}]
-  $onlyIf[$findUser[$message[1];no]!=$authorID;{title:Error!}{description:Huh? You can't ban yourself}{thumbnail:https://cdn.discordapp.com/emojis/867140143676915726.png?v=1}{color:RED}]
-  $onlyIf[$findUser[$message[1];no]!=$ownerID;{title:Error!}{description:You can't ban the owner of the server!}{thumbnail:https://cdn.discordapp.com/emojis/867140143676915726.png?v=1}{color:RED}]
-  $onlyIf[$isBanned[$findUser[$message[1];no]]==false;{title:Error!}{description:That user was already banned from the server}{thumbnail:https://cdn.discordapp.com/emojis/867140143676915726.png?v=1}{color:RED}]
-  $onlyIf[$findUser[$message[1];no]!=$clientID;{title:Error!}{description:I cant get self-banned...Just kick me then...i suppose...}{thumbnail:https://cdn.discordapp.com/emojis/867140143676915726.png?v=1}{color:RED}]
-  $onlyIf[$rolePosition[$highestRole[$clientID]]<$rolePosition[$highestRole[$findUser[$message[1];no]]];{title:Error!}{description:This user has higher role than me! Give me the highest role to help you!}{thumbnail:https://cdn.discordapp.com/emojis/867140143676915726.png?v=1}{color:RED}]
-  $suppressErrors[{title:Error!}{description:Can't locate user}{thumbnail:https://cdn.discordapp.com/emojis/867140143676915726.png?v=1}{color:RED}]`
-  });
+console.log("test")
 
 
   bot.command({

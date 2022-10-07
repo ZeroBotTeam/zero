@@ -1,4 +1,4 @@
- // MAIN SETUP test
+ // MAIN SETUP test22
 
 const aoijs = require("aoi.js")
 const bot = new aoijs.Bot({
